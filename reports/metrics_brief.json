@@ -1,0 +1,7 @@
+{
+  "alerts": 400,
+  "mules_in_sample": 0,
+  "sample": 5,
+  "scorer": "xgboost",
+  "standout_percentile": 0.95
+}

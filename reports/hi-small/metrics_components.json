@@ -1,0 +1,108 @@
+{
+  "bands": [
+    {
+      "accounts": 0,
+      "band": "not in the graph",
+      "set": "alerted by xgboost",
+      "share": 0.0
+    },
+    {
+      "accounts": 0,
+      "band": "1, isolated",
+      "set": "alerted by xgboost",
+      "share": 0.0
+    },
+    {
+      "accounts": 1,
+      "band": "2 to 3, an edge or a path",
+      "set": "alerted by xgboost",
+      "share": 0.0025
+    },
+    {
+      "accounts": 3,
+      "band": "4 to 50, could be a motif",
+      "set": "alerted by xgboost",
+      "share": 0.0075
+    },
+    {
+      "accounts": 396,
+      "band": "over 50",
+      "set": "alerted by xgboost",
+      "share": 0.99
+    },
+    {
+      "accounts": 0,
+      "band": "not in the graph",
+      "set": "reachable mules",
+      "share": 0.0
+    },
+    {
+      "accounts": 0,
+      "band": "1, isolated",
+      "set": "reachable mules",
+      "share": 0.0
+    },
+    {
+      "accounts": 13,
+      "band": "2 to 3, an edge or a path",
+      "set": "reachable mules",
+      "share": 0.028761061946902654
+    },
+    {
+      "accounts": 1,
+      "band": "4 to 50, could be a motif",
+      "set": "reachable mules",
+      "share": 0.0022123893805309734
+    },
+    {
+      "accounts": 438,
+      "band": "over 50",
+      "set": "reachable mules",
+      "share": 0.9690265486725663
+    },
+    {
+      "accounts": 0,
+      "band": "not in the graph",
+      "set": "whole scoring population",
+      "share": 0.0
+    },
+    {
+      "accounts": 0,
+      "band": "1, isolated",
+      "set": "whole scoring population",
+      "share": 0.0
+    },
+    {
+      "accounts": 7173,
+      "band": "2 to 3, an edge or a path",
+      "set": "whole scoring population",
+      "share": 0.03759966032929188
+    },
+    {
+      "accounts": 2204,
+      "band": "4 to 50, could be a motif",
+      "set": "whole scoring population",
+      "share": 0.011552997541580831
+    },
+    {
+      "accounts": 181396,
+      "band": "over 50",
+      "set": "whole scoring population",
+      "share": 0.9508473421291272
+    }
+  ],
+  "graph": {
+    "components": 6963,
+    "components_with_a_cycle": 22,
+    "cycle_share_outside_largest": 0.0030163746049985635,
+    "edges": 302044,
+    "largest_component": 235046,
+    "largest_share": 0.9290429173353149,
+    "median_component": 2.0,
+    "nodes": 252998,
+    "singletons": 0
+  },
+  "max_archetype_nodes": 50,
+  "min_archetype_nodes": 4,
+  "window": "test"
+}

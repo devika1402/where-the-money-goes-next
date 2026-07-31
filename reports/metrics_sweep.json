@@ -1,0 +1,119 @@
+{
+  "configured_hours": 24,
+  "feasible_hours": [
+    24,
+    48,
+    72
+  ],
+  "feature_window_hours": 96,
+  "infeasible_hours": [
+    120
+  ],
+  "requested_hours": [
+    24,
+    48,
+    72,
+    120
+  ],
+  "rows": [
+    {
+      "alerts": 400,
+      "caught": 1,
+      "hours": 24,
+      "inflow_hours": 72,
+      "net_per_day": -236784.156,
+      "precision_at_k": 0.0025,
+      "scorer": "rules",
+      "threshold": 0.9457419401902026,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 2,
+      "hours": 24,
+      "inflow_hours": 72,
+      "net_per_day": 2315015.4294999996,
+      "precision_at_k": 0.005,
+      "scorer": "logistic",
+      "threshold": 0.7591659684367509,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 5,
+      "hours": 24,
+      "inflow_hours": 72,
+      "net_per_day": -210409.447325,
+      "precision_at_k": 0.0125,
+      "scorer": "xgboost",
+      "threshold": 0.5172466039657593,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 2,
+      "hours": 48,
+      "inflow_hours": 48,
+      "net_per_day": -235678.461,
+      "precision_at_k": 0.005,
+      "scorer": "rules",
+      "threshold": 0.9484448608034278,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 4,
+      "hours": 48,
+      "inflow_hours": 48,
+      "net_per_day": 2314256.426375,
+      "precision_at_k": 0.01,
+      "scorer": "logistic",
+      "threshold": 0.7457364028834929,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 1,
+      "hours": 48,
+      "inflow_hours": 48,
+      "net_per_day": -237880.1265,
+      "precision_at_k": 0.0025,
+      "scorer": "xgboost",
+      "threshold": 0.5165923237800598,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 2,
+      "hours": 72,
+      "inflow_hours": 24,
+      "net_per_day": -235678.461,
+      "precision_at_k": 0.005,
+      "scorer": "rules",
+      "threshold": 0.9510594757716185,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 2,
+      "hours": 72,
+      "inflow_hours": 24,
+      "net_per_day": -230305.515,
+      "precision_at_k": 0.005,
+      "scorer": "logistic",
+      "threshold": 0.7380447090444411,
+      "trees_kept": 1
+    },
+    {
+      "alerts": 400,
+      "caught": 5,
+      "hours": 72,
+      "inflow_hours": 24,
+      "net_per_day": 6209.917000000016,
+      "precision_at_k": 0.0125,
+      "scorer": "xgboost",
+      "threshold": 0.5195226669311523,
+      "trees_kept": 1
+    }
+  ]
+}

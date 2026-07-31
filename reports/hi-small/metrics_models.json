@@ -1,0 +1,186 @@
+{
+  "bootstrap_resamples": 1000,
+  "importance": {
+    "active_days": 0.04987858980894089,
+    "burstiness": 0.03434942290186882,
+    "counterparty_asymmetry": 0.04688006639480591,
+    "degree_asymmetry": 0.04680197685956955,
+    "in_degree": 0.037843748927116394,
+    "inflow_concentration": 0.057058438658714294,
+    "max_inflow": 0.04473819211125374,
+    "max_outflow": 0.053997330367565155,
+    "mean_amount_ratio": 0.04130496084690094,
+    "median_hours_to_outflow": 0.04552893340587616,
+    "out_degree": 0.04481379687786102,
+    "outflow_concentration": 0.039152275770902634,
+    "pagerank": 0.08283218741416931,
+    "pass_through_ratio": 0.04430524632334709,
+    "reciprocity": 0.07476569712162018,
+    "sender_diversity": 0.0417490229010582,
+    "total_inflow": 0.04451627656817436,
+    "total_outflow": 0.04399743303656578,
+    "unique_counterparties_in": 0.07070167362689972,
+    "unique_counterparties_out": 0.054784685373306274
+  },
+  "null_rates": {
+    "test": {
+      "mean_amount_ratio": 0.561646564241271,
+      "median_hours_to_outflow": 0.5733043984211602,
+      "pass_through_ratio": 0.052832423875496005
+    },
+    "train": {
+      "mean_amount_ratio": 0.4793461276493449,
+      "median_hours_to_outflow": 0.5310017519641302,
+      "pass_through_ratio": 0.06250250410673505
+    },
+    "val": {
+      "mean_amount_ratio": 0.5618496262641067,
+      "median_hours_to_outflow": 0.581169782877243,
+      "pass_through_ratio": 0.062001423755784005
+    }
+  },
+  "scale_pos_weight": 449.08032786885246,
+  "train_clean": 273939,
+  "train_mules": 610,
+  "trees_allowed": 400,
+  "trees_kept": 8,
+  "windows": {
+    "test": {
+      "base_rate": 0.0023693080257688455,
+      "flag_configured": {
+        "flagged": 312,
+        "mules": 452,
+        "mules_caught": 1,
+        "precision": 0.003205128205128205,
+        "share": 0.0016354515576103537
+      },
+      "flag_matched": {
+        "flagged": 8,
+        "mules": 452,
+        "mules_caught": 0,
+        "precision": 0.0,
+        "share": 4.19346553233424e-05
+      },
+      "paired": [
+        {
+          "comparison": "xgboost - rules",
+          "crosses_zero": false,
+          "difference": 0.0049763358499484555,
+          "high": 0.014580739631720826,
+          "low": 0.001442640146532351
+        },
+        {
+          "comparison": "xgboost - logistic",
+          "crosses_zero": false,
+          "difference": 0.003406750601552439,
+          "high": 0.010984880203252488,
+          "low": 0.0002496847969630643
+        },
+        {
+          "comparison": "logistic - rules",
+          "crosses_zero": false,
+          "difference": 0.0015695852483960165,
+          "high": 0.004905359816859867,
+          "low": 0.0006434758211002116
+        }
+      ],
+      "pr_auc": [
+        {
+          "high": 0.002763392866888183,
+          "low": 0.0020933785545902157,
+          "pr_auc": 0.002387456471124475,
+          "scorer": "rules"
+        },
+        {
+          "high": 0.0074453099247506075,
+          "low": 0.0029552754793230954,
+          "pr_auc": 0.0039570417195204915,
+          "scorer": "logistic"
+        },
+        {
+          "high": 0.017115893318372235,
+          "low": 0.003860216763199648,
+          "pr_auc": 0.0073637923210729305,
+          "scorer": "xgboost"
+        }
+      ]
+    },
+    "train": {
+      "base_rate": 0.002221825612185803,
+      "flag_configured": {
+        "flagged": 469,
+        "mules": 610,
+        "mules_caught": 2,
+        "precision": 0.0042643923240938165,
+        "share": 0.0017082560854346583
+      },
+      "flag_matched": {
+        "flagged": 28,
+        "mules": 610,
+        "mules_caught": 0,
+        "precision": 0.0,
+        "share": 0.00010198543793639751
+      }
+    },
+    "val": {
+      "base_rate": 0.002789933209103662,
+      "flag_configured": {
+        "flagged": 183,
+        "mules": 533,
+        "mules_caught": 0,
+        "precision": 0.0,
+        "share": 0.0009578945164464731
+      },
+      "flag_matched": {
+        "flagged": 7,
+        "mules": 533,
+        "mules_caught": 0,
+        "precision": 0.0,
+        "share": 3.664077385314378e-05
+      },
+      "paired": [
+        {
+          "comparison": "xgboost - rules",
+          "crosses_zero": false,
+          "difference": 0.016359942417538288,
+          "high": 0.0291529307403785,
+          "low": 0.006336916346047606
+        },
+        {
+          "comparison": "xgboost - logistic",
+          "crosses_zero": false,
+          "difference": 0.014197720501661203,
+          "high": 0.02528375247787338,
+          "low": 0.004880462674635966
+        },
+        {
+          "comparison": "logistic - rules",
+          "crosses_zero": false,
+          "difference": 0.0021622219158770857,
+          "high": 0.00707667745161992,
+          "low": 0.0003221951267459925
+        }
+      ],
+      "pr_auc": [
+        {
+          "high": 0.004179382311564409,
+          "low": 0.003023905815006628,
+          "pr_auc": 0.0034650210084289463,
+          "scorer": "rules"
+        },
+        {
+          "high": 0.010851176311700614,
+          "low": 0.003683264876104596,
+          "pr_auc": 0.005627242924306032,
+          "scorer": "logistic"
+        },
+        {
+          "high": 0.033020834754927945,
+          "low": 0.009861035905095707,
+          "pr_auc": 0.019824963425967235,
+          "scorer": "xgboost"
+        }
+      ]
+    }
+  }
+}

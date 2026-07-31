@@ -1,0 +1,34 @@
+[project]
+name = "beneficiary-mule-detection"
+version = "0.1.0"
+description = "Beneficiary-side mule network detection on synthetic AML transactions"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "PT", "RET", "SIM", "ARG", "PL", "RUF"]
+ignore = ["PLR0913"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+disallow_any_unimported = true
+plugins = []
+
+[[tool.mypy.overrides]]
+module = ["scipy.*", "sklearn.*", "xgboost.*", "matplotlib.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q --strict-markers"
+# A warning is a defect until proven otherwise. Pristine output is part of the bar.
+filterwarnings = ["error"]

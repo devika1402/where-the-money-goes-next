@@ -1,0 +1,213 @@
+# Every parameter the pipeline reads. Nothing is hardcoded in src/.
+# Values marked ASSUMED are stated, not measured, and are reported as such in every
+# figure footer and in the README.
+#
+# This is the published variant, LI-Small, and `make all` produces the headline from it.
+# PRD section 6 fixes that division: develop on HI-Small, report the headline on LI-Small,
+# because LI-Small sits at the lower base rate the economics work is about. The move was
+# gated on a rule pre-registered before the positives were counted. HI-Small is `config/params_hi_small.yaml` and `make hi-small`.
+#
+# The two files differ in the data contract and the output directories and in nothing else.
+# The split shape, feature settings, model settings, rules thresholds, costs and seed are
+# identical, so any figure that differs between them differs because the data differs.
+
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  reports_dir: reports
+  figures_dir: reports/figures
+
+data:
+  variant: LI-Small
+  trans_file: LI-Small_Trans.csv
+  patterns_file: LI-Small_Patterns.txt
+  # MEASURED 2026-07-30 by a full scan, the same way HI-Small's were on 2026-07-28.
+  # The build asserts against these and stops on mismatch.
+  #
+  # PRD section 3 records 6,924,055 transactions for LI-Small from the dataset description.
+  # The scan reads 6,924,049. The measured figure is the one asserted, because the contract
+  # exists to catch a file that is not the file that was measured.
+  expected_rows: 6924049
+  # Counted as (bank, account) pairs, which is the node key, matching HI-Small's convention.
+  expected_accounts: 705907
+  # The raw total, self-transfers included. 3,562 survive the drop and 3 are inside it.
+  expected_laundering_rows: 3565
+  expected_self_transfers: 804477
+  # Rows where the account is the same on both sides. Dropped at load.
+  drop_self_transfers: true
+
+currency:
+  base_currency: Euro
+  # ASSUMED. The simulator's rates are not published, so this is a fixed invented table.
+  # Internal consistency is the point, not accuracy. Stated in the README.
+  # Euro is the base and is 1.0 by definition. US Dollar is 0.90 because PRD section 8 F1
+  # fixes that rate in its worked example, and the test imports this table rather than
+  # restating the rate.
+  fx_to_base:
+    Euro: 1.0
+    US Dollar: 0.90
+    UK Pound: 1.17
+    Swiss Franc: 1.03
+    Canadian Dollar: 0.66
+    Australian Dollar: 0.60
+    Yen: 0.0060
+    Yuan: 0.125
+    Rupee: 0.011
+    Ruble: 0.0095
+    Brazil Real: 0.16
+    Mexican Peso: 0.048
+    Saudi Riyal: 0.24
+    Shekel: 0.24
+    Bitcoin: 55000.0
+
+split:
+  # The same boundaries as the development variant, and derived the same way rather than
+  # copied. LI-Small's own Step 1 scan on 2026-07-30 measured a 16.64 day span, 09-01 00:00 to
+  # 2022-09-17 15:28, with the identical exhaustion signature: 277,412 rows on 09-10 at a
+  # 0.1081% laundering share, then 54 rows on 09-11 at 87.04%, falling to 2 rows a day at
+  # 100% by 09-17. So the usable span is the same ten days, and the 09-11 exclusion applies here
+  # on its own evidence.
+  #
+  # Three label windows of equal length, each preceded by a feature window of fixed
+  # length that ends exactly where the label window begins. Fixed length rather than
+  # expanding, so a feature means the same thing in every split.
+  #
+  # One difference worth recording: LI-Small's background volume is lumpy where HI-Small's
+  # is flat. Days range from 277,029 to 1,007,580 rows inside the usable span. The window
+  # boundaries are unchanged because the exhaustion point is what sets them.
+  #
+  #   train  features [09-01, 09-05)  labels [09-05, 09-07)
+  #   val    features [09-03, 09-07)  labels [09-07, 09-09)
+  #   test   features [09-05, 09-09)  labels [09-09, 09-11)
+  data_start: "2022-09-01 00:00:00"
+  data_end: "2022-09-11 00:00:00"
+  feature_window_days: 4
+
+windows:
+  # Two days, so three label windows plus a four day feature window fit the ten usable days.
+  label_window_days: 2
+  # Reduced from the PRD's 72 at Checkpoint 1. The extension is subtracted from the 96 hour
+  # feature window to give the inflow sub-window, so 72 left only 24 hours of inflow and the
+  # feature's null rate swung from 26% to 56% to 10% across splits purely on which calendar
+  # day that window covered. At 24 the rates are 6.3%, 6.2%, 5.3%.
+  pass_through_window_hours: 24
+
+features:
+  min_flow_eur: 100
+  pagerank_damping: 0.85
+  pagerank_max_iter: 100
+  pagerank_tol: 1.0e-06
+
+logistic:
+  # Declared before the first fit and not revisited. Nothing here was chosen by looking at
+  # a detection metric.
+  max_iter: 1000
+  C: 1.0
+  class_weight: balanced
+  solver: lbfgs
+  # log1p before standardising, applied to the non-negative features whose scale is
+  # unbounded. The seven bounded or signed features are left alone: log1p(-1) is -inf, and
+  # a feature already inside [0, 1] has nothing to compress. This is the transform that handles the pass-through ratio's heavy tail for logistic regression only.
+  log1p_features:
+    - in_degree
+    - unique_counterparties_in
+    - total_inflow
+    - max_inflow
+    - out_degree
+    - unique_counterparties_out
+    - total_outflow
+    - max_outflow
+    - pagerank
+    - active_days
+    - pass_through_ratio
+    - median_hours_to_outflow
+    - mean_amount_ratio
+
+model:
+  n_estimators: 400
+  max_depth: 6
+  learning_rate: 0.05
+  early_stopping_rounds: 30
+  subsample: 0.8
+  colsample_bytree: 0.8
+  device: cpu
+  tree_method: hist
+
+rules_baseline:
+  in_degree_percentile: 0.99
+  pass_through_ratio_min: 0.8
+
+costs:
+  # All five ASSUMED except cost_missed_mule_eur, which is anchored in DNB 2025 figures.
+  # These five are the checkpoint assumptions printed in every figure footer.
+  cost_missed_mule_eur: 1150
+  cost_investigation_eur: 25
+  cost_false_freeze_eur: 75
+  analyst_capacity_per_day: 200
+  # What happens to accounts above the threshold that the day's capacity did not reach.
+  # same_day discards them at the end of the day. rollover_max_3d carries them for three
+  # days, so yesterday's spillover competes for today's capacity. The horizon of each is
+  # defined once in src/definitions.py and is not separately configurable.
+  #
+  # The PRD's assumption register defaults this to rollover_max_3d. same_day is configured
+  # here because it is what every published figure was measured under, and the alternative
+  # is measured beside it rather than replacing it.
+  #
+  # At label_window_days = 2 the three day expiry cannot bind, so rollover_max_3d is plain
+  # rollover over a single carry on these windows. Pinned by a test.
+  queue_overflow_policy: same_day
+
+evaluation:
+  # Bootstrap resamples for the confidence interval on PR-AUC. At 387 test positives a
+  # point estimate on its own supports almost any story, so nothing is reported without
+  # an interval.
+  bootstrap_resamples: 1000
+
+sensitivity:
+  # Multipliers applied to each cost parameter in the Checkpoint 4 sweep.
+  multipliers: [0.25, 0.5, 1.0, 2.0, 4.0]
+
+monitoring:
+  # F5, Population Stability Index. Session G6.
+  # Bin edges are quantiles of the reference window and are applied unchanged to the
+  # comparison window. Re-deriving them from the comparison reports no drift whatever the
+  # truth is, which is the failure F5 edge case (a) exists to prevent.
+  bins: 10
+  # Replaces a zero proportion before the log, per F5 edge case (b). The PRD fixes this
+  # value, and the worked example's 2.5223 depends on it.
+  epsilon: 1.0e-06
+  # The reference window every comparison is measured against. Train, because that is the
+  # distribution the models were fitted on, which is what a production monitor watches.
+  reference_window: train
+
+experiments:
+  # Session G1. Alternative history-window lengths measured against the fixed test label
+  # window [09-09, 09-11), reported alongside the published split rather than replacing it.
+  # 4 is the published length, and 8 is the longest that still starts inside the usable
+  # span. The scan raises rather than clamping if a longer one is asked for.
+  history_window_days: [4, 6, 8]
+  # Row-block size for the triangle count. The full U @ U materialises every path of length
+  # two, and a single hub of degree 9,220 pushes that into tens of millions of nonzeros, so
+  # the product runs over blocks of rows. Blocks are row ranges, not accounts.
+  triangle_block_rows: 50000
+  # The pass-through window sweep. Vary the inflow sub-window and report how the operating
+  # point moves, reported beside the published split rather than replacing it. The extension
+  # is subtracted from the 96 hour feature window, so a value at or above 96 leaves no inflow
+  # window and the feature stage raises. 24 is the published value and the first row must
+  # reproduce the published operating point exactly. 120 from the specification is infeasible
+  # on this window by arithmetic and is left out with that stated.
+  pass_through_sweep_hours: [24, 48, 72, 120]
+
+brief:
+  # The analyst brief generator, reduced form. One brief per alerted account carrying its
+  # exposure, its rank in the day's queue, and the features that stand out about it in words.
+  # Without SHAP the standout is descriptive, a percentile in the scored population, not the
+  # model's own attribution, and the brief says so.
+  scorer: xgboost
+  # How many of the alerted accounts to write as sample briefs, highest exposure first.
+  sample: 5
+  # A feature is called out only if the account sits at or above this percentile of the
+  # scored population on it, so a brief lists what is unusual rather than every value.
+  standout_percentile: 0.95

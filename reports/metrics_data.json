@@ -1,0 +1,136 @@
+{
+  "accounts": 705907,
+  "daily": {
+    "2022-09-01": {
+      "laundering": 310,
+      "laundering_share": 0.000373889487916133,
+      "transactions": 829122
+    },
+    "2022-09-02": {
+      "laundering": 350,
+      "laundering_share": 0.0003473669584549118,
+      "transactions": 1007580
+    },
+    "2022-09-03": {
+      "laundering": 291,
+      "laundering_share": 0.001047127954718013,
+      "transactions": 277903
+    },
+    "2022-09-04": {
+      "laundering": 291,
+      "laundering_share": 0.0010504315432680333,
+      "transactions": 277029
+    },
+    "2022-09-05": {
+      "laundering": 369,
+      "laundering_share": 0.0005732395022603346,
+      "transactions": 643710
+    },
+    "2022-09-06": {
+      "laundering": 380,
+      "laundering_share": 0.0005905582173844798,
+      "transactions": 643459
+    },
+    "2022-09-07": {
+      "laundering": 368,
+      "laundering_share": 0.0005706992461497186,
+      "transactions": 644823
+    },
+    "2022-09-08": {
+      "laundering": 402,
+      "laundering_share": 0.0006239852478711548,
+      "transactions": 644246
+    },
+    "2022-09-09": {
+      "laundering": 367,
+      "laundering_share": 0.00041984121536595967,
+      "transactions": 874140
+    },
+    "2022-09-10": {
+      "laundering": 300,
+      "laundering_share": 0.0010814240191484147,
+      "transactions": 277412
+    },
+    "2022-09-11": {
+      "laundering": 47,
+      "laundering_share": 0.8703703703703703,
+      "transactions": 54
+    },
+    "2022-09-12": {
+      "laundering": 27,
+      "laundering_share": 0.84375,
+      "transactions": 32
+    },
+    "2022-09-13": {
+      "laundering": 29,
+      "laundering_share": 0.9666666666666667,
+      "transactions": 30
+    },
+    "2022-09-14": {
+      "laundering": 18,
+      "laundering_share": 0.9473684210526315,
+      "transactions": 19
+    },
+    "2022-09-15": {
+      "laundering": 6,
+      "laundering_share": 1.0,
+      "transactions": 6
+    },
+    "2022-09-16": {
+      "laundering": 5,
+      "laundering_share": 1.0,
+      "transactions": 5
+    },
+    "2022-09-17": {
+      "laundering": 2,
+      "laundering_share": 1.0,
+      "transactions": 2
+    }
+  },
+  "laundering_in_self_transfers": 3,
+  "observed_end": "2022-09-17 15:28:00",
+  "observed_start": "2022-09-01 00:00:00",
+  "rows_read": 6924049,
+  "self_transfers_dropped": 804477,
+  "usable_end": "2022-09-11 00:00:00",
+  "usable_rows": 6119424,
+  "usable_start": "2022-09-01 00:00:00",
+  "windows": {
+    "test": {
+      "base_rate": 0.0014858384620996012,
+      "feature_end": "2022-09-09 00:00:00",
+      "feature_start": "2022-09-05 00:00:00",
+      "label_end": "2022-09-11 00:00:00",
+      "label_start": "2022-09-09 00:00:00",
+      "mules": 387,
+      "mules_in_window": 635,
+      "population": 260459,
+      "reachability_ceiling": 0.6094488188976378,
+      "unscoreable_mules": 248
+    },
+    "train": {
+      "base_rate": 0.001503290446909059,
+      "feature_end": "2022-09-05 00:00:00",
+      "feature_start": "2022-09-01 00:00:00",
+      "label_end": "2022-09-07 00:00:00",
+      "label_start": "2022-09-05 00:00:00",
+      "mules": 564,
+      "mules_in_window": 714,
+      "population": 375177,
+      "reachability_ceiling": 0.7899159663865546,
+      "unscoreable_mules": 150
+    },
+    "val": {
+      "base_rate": 0.0017626051226911409,
+      "feature_end": "2022-09-07 00:00:00",
+      "feature_start": "2022-09-03 00:00:00",
+      "label_end": "2022-09-09 00:00:00",
+      "label_start": "2022-09-07 00:00:00",
+      "mules": 459,
+      "mules_in_window": 741,
+      "population": 260410,
+      "reachability_ceiling": 0.6194331983805668,
+      "unscoreable_mules": 282
+    }
+  }
+}

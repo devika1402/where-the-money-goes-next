@@ -1,0 +1,471 @@
+{
+  "bins": 10,
+  "decay_by_week": null,
+  "decay_note": "Not measurable. The usable span is ten days, so there are no weeks to decay over.",
+  "epsilon": 1e-06,
+  "feature_drift": {
+    "test": [
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 11,
+        "empty_bins": 1,
+        "epsilon_dependent": true,
+        "feature": "burstiness",
+        "psi": 4.047865007094677,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 10,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "pagerank",
+        "psi": 3.903263320165074,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 10,
+        "empty_bins": 1,
+        "epsilon_dependent": true,
+        "feature": "sender_diversity",
+        "psi": 1.878728166642535,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 5,
+        "empty_bins": 7,
+        "epsilon_dependent": true,
+        "feature": "active_days",
+        "psi": 1.653657247288019,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 10,
+        "empty_bins": 2,
+        "epsilon_dependent": true,
+        "feature": "in_degree",
+        "psi": 1.2559138354722326,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "out_degree",
+        "psi": 0.4541035118702592,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 9,
+        "empty_bins": 2,
+        "epsilon_dependent": true,
+        "feature": "inflow_concentration",
+        "psi": 0.34044776567742374,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 5,
+        "empty_bins": 7,
+        "epsilon_dependent": true,
+        "feature": "unique_counterparties_in",
+        "psi": 0.3134400749679738,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "max_inflow",
+        "psi": 0.21492169222854382,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "total_inflow",
+        "psi": 0.12388684121899365,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "max_outflow",
+        "psi": 0.11111218988701618,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 6,
+        "empty_bins": 6,
+        "epsilon_dependent": true,
+        "feature": "unique_counterparties_out",
+        "psi": 0.08494018286739247,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.5733043984211602,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "median_hours_to_outflow",
+        "psi": 0.08467695019147811,
+        "reading": "stable",
+        "reference_null_share": 0.5310017519641302
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 7,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "counterparty_asymmetry",
+        "psi": 0.07761973613175062,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 3,
+        "epsilon_dependent": true,
+        "feature": "degree_asymmetry",
+        "psi": 0.060145017389099144,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.561646564241271,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "mean_amount_ratio",
+        "psi": 0.05179755730896119,
+        "reading": "stable",
+        "reference_null_share": 0.4793461276493449
+      },
+      {
+        "comparison_null_share": 0.052832423875496026,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "pass_through_ratio",
+        "psi": 0.04896999280514736,
+        "reading": "stable",
+        "reference_null_share": 0.06250250410673508
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 7,
+        "empty_bins": 5,
+        "epsilon_dependent": true,
+        "feature": "outflow_concentration",
+        "psi": 0.03951686837778131,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "total_outflow",
+        "psi": 0.034281146773882686,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 3,
+        "empty_bins": 9,
+        "epsilon_dependent": true,
+        "feature": "reciprocity",
+        "psi": 0.0,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      }
+    ],
+    "val": [
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 10,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "pagerank",
+        "psi": 3.908260462419814,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "burstiness",
+        "psi": 1.0659732678397889,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 10,
+        "empty_bins": 1,
+        "epsilon_dependent": true,
+        "feature": "sender_diversity",
+        "psi": 0.766952838181851,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 10,
+        "empty_bins": 2,
+        "epsilon_dependent": true,
+        "feature": "in_degree",
+        "psi": 0.5484768072059514,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 9,
+        "empty_bins": 2,
+        "epsilon_dependent": true,
+        "feature": "inflow_concentration",
+        "psi": 0.3309534739335174,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 5,
+        "empty_bins": 7,
+        "epsilon_dependent": true,
+        "feature": "unique_counterparties_in",
+        "psi": 0.3126729366151404,
+        "reading": "significant shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "max_inflow",
+        "psi": 0.21405928290513798,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 5,
+        "empty_bins": 7,
+        "epsilon_dependent": true,
+        "feature": "active_days",
+        "psi": 0.21274130803837715,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "total_inflow",
+        "psi": 0.16116818286784632,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "max_outflow",
+        "psi": 0.10900831483451252,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "out_degree",
+        "psi": 0.10570670902495503,
+        "reading": "moderate shift",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.5811697828772429,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "median_hours_to_outflow",
+        "psi": 0.0871854249396653,
+        "reading": "stable",
+        "reference_null_share": 0.5310017519641302
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 6,
+        "empty_bins": 6,
+        "epsilon_dependent": true,
+        "feature": "unique_counterparties_out",
+        "psi": 0.08378232059029371,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 7,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "counterparty_asymmetry",
+        "psi": 0.07722849934935222,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "total_outflow",
+        "psi": 0.05928449684033224,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.06200142375578399,
+        "distinct_reference_edges": 8,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "feature": "pass_through_ratio",
+        "psi": 0.05810470624409065,
+        "reading": "stable",
+        "reference_null_share": 0.06250250410673508
+      },
+      {
+        "comparison_null_share": 0.5618496262641066,
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "feature": "mean_amount_ratio",
+        "psi": 0.051583568545636185,
+        "reading": "stable",
+        "reference_null_share": 0.4793461276493449
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 7,
+        "empty_bins": 5,
+        "epsilon_dependent": true,
+        "feature": "outflow_concentration",
+        "psi": 0.039440771819810407,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 8,
+        "empty_bins": 3,
+        "epsilon_dependent": true,
+        "feature": "degree_asymmetry",
+        "psi": 0.03422462066348765,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      },
+      {
+        "comparison_null_share": 0.0,
+        "distinct_reference_edges": 3,
+        "empty_bins": 9,
+        "epsilon_dependent": true,
+        "feature": "reciprocity",
+        "psi": 0.0,
+        "reading": "stable",
+        "reference_null_share": 0.0
+      }
+    ]
+  },
+  "readings": {
+    "moderate shift": 0.25,
+    "stable": 0.1
+  },
+  "reference_window": "train",
+  "score_drift": {
+    "test": {
+      "logistic": {
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "ks": 0.055757931451962756,
+        "psi": 0.029018879649521913,
+        "reading": "stable"
+      },
+      "rules": {
+        "distinct_reference_edges": 9,
+        "empty_bins": 6,
+        "epsilon_dependent": true,
+        "ks": 0.5732463730493005,
+        "psi": 8.77032930904075,
+        "reading": "significant shift"
+      },
+      "xgboost": {
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "ks": 0.1510349577921652,
+        "psi": 0.37105118298960627,
+        "reading": "significant shift"
+      }
+    },
+    "val": {
+      "logistic": {
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "ks": 0.07704825444555857,
+        "psi": 0.047898801232968496,
+        "reading": "stable"
+      },
+      "rules": {
+        "distinct_reference_edges": 9,
+        "empty_bins": 4,
+        "epsilon_dependent": true,
+        "ks": 0.2682336103678822,
+        "psi": 5.293900675505389,
+        "reading": "significant shift"
+      },
+      "xgboost": {
+        "distinct_reference_edges": 11,
+        "empty_bins": 0,
+        "epsilon_dependent": false,
+        "ks": 0.18352794527414729,
+        "psi": 0.282596814299182,
+        "reading": "significant shift"
+      }
+    }
+  }
+}

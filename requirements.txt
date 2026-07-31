@@ -1,0 +1,19 @@
+# Loose pins. `make setup` resolves these into requirements.lock with exact versions.
+# Version-sensitive idioms tied to these pins are listed in PRD section 5.
+xgboost==3.3.0
+scikit-learn==1.8.0
+pandas>=2.2,<3
+# numpy is held below 2.5 because pandas 2.3.3 emits a DeprecationWarning on every
+# Timedelta operation against numpy 2.5.x, which numpy states will become an error.
+numpy>=2,<2.5
+scipy>=1.14,<2
+pyarrow>=17
+PyYAML>=6
+matplotlib>=3.9,<4
+
+# Tooling
+pytest>=8
+mypy>=1.11
+ruff>=0.6
+types-PyYAML
+pandas-stubs

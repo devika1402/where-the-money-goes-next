@@ -1,0 +1,69 @@
+{
+  "label_window": [
+    "2022-09-09 00:00:00",
+    "2022-09-11 00:00:00"
+  ],
+  "published_history_days": 4,
+  "rows": [
+    {
+      "base_rate": 0.0023693080257688455,
+      "feature_start": "2022-09-05",
+      "graph": {
+        "accounts_in_triangle": 6149,
+        "directed_edges": 302710,
+        "max_degree": 9220,
+        "mean_degree": 2.387718479987984,
+        "nodes": 252998,
+        "triangles": 4286,
+        "undirected_edges": 302044,
+        "zero_triangle_share": 0.9756954600431624
+      },
+      "history_days": 4,
+      "mules_in_label_window": 782,
+      "population": 190773,
+      "reachability": 0.578005115089514,
+      "reachable_mules": 452,
+      "unscoreable_mules": 330
+    },
+    {
+      "base_rate": 0.002343999715878822,
+      "feature_start": "2022-09-03",
+      "graph": {
+        "accounts_in_triangle": 11193,
+        "directed_edges": 343699,
+        "max_degree": 9220,
+        "mean_degree": 2.549199374394876,
+        "nodes": 268540,
+        "triangles": 8395,
+        "undirected_edges": 342281,
+        "zero_triangle_share": 0.958319058613242
+      },
+      "history_days": 6,
+      "mules_in_label_window": 782,
+      "population": 197099,
+      "reachability": 0.5907928388746803,
+      "reachable_mules": 462,
+      "unscoreable_mules": 320
+    },
+    {
+      "base_rate": 0.0020972483390859554,
+      "feature_start": "2022-09-01",
+      "graph": {
+        "accounts_in_triangle": 26719,
+        "directed_edges": 611068,
+        "max_degree": 14775,
+        "mean_degree": 2.9280078895463513,
+        "nodes": 415740,
+        "triangles": 19161,
+        "undirected_edges": 608645,
+        "zero_triangle_share": 0.9357314667821235
+      },
+      "history_days": 8,
+      "mules_in_label_window": 782,
+      "population": 281321,
+      "reachability": 0.7544757033248082,
+      "reachable_mules": 590,
+      "unscoreable_mules": 192
+    }
+  ]
+}

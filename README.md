@@ -2,9 +2,7 @@
 
 When someone is talked into transferring their own money to a scammer, the bank cannot catch it by
 looking at the payment. The customer made the transfer themselves, from their own device, after
-passing their own security checks, to an account they typed in themselves. Everything a fraud
-system watches on the sending side looks correct, because the deception happened in a phone call
-before any of those checks ran.
+passing their own security checks, to an account they typed in themselves.
 
 ![Why do we score the receiving account? Three stages read top to bottom: every sender-side check passes, since device, location and login all look normal. Money arrives at the account from several strangers with no shared history. The same money leaves again within 24 hours, to new accounts.](docs/diagrams/second-hop.svg)
 

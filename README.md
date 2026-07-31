@@ -1,4 +1,4 @@
-# Where the Money Goes Next: which receiving account to investigate first
+# Where the Money Goes Next: which receiving account to look at first
 
 When someone is talked into transferring their own money to a scammer, the bank cannot catch it by
 looking at the payment. The customer made the transfer themselves, from their own device, after

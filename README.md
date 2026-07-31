@@ -55,7 +55,7 @@ instant.
 Every version is pinned in `requirements.lock`. The graph features use `scipy.sparse` operations,
 not a graph library. The whole feature set stays vectorised, so the pipeline runs on a laptop.
 
-## What we found
+## What I found
 
 The pipeline ranks every account that received money in the last four days and opens the top 400.
 It then puts a price on each of the four ways that call can turn out. Three things came out of
@@ -69,7 +69,7 @@ changes the price tag on that queue, and the same 400 accounts stay at the front
 missed mule cost four times more, or a wrong freeze four times less, and the same 400 come out,
 catching the same 5. Double the team and we could open 800 cases and catch 6.
 
-**One account received most of the money.**
+**One of the accounts received most of the money.**
 
 The pipeline scored 387 mule accounts in the test window. One of them received 69.3% of all the
 money that reached those accounts. The typical case and the average case are nothing alike. The
@@ -81,7 +81,7 @@ average 944,448 EUR instead. Being right 0.0106% of the time is enough. The queu
 of the time, which falls between the two. Take the typical figure and the recommendation would be
 to stop alerting. Take the average and it would be to alert far more.
 
-**A rule written by hand did as well as XGBoost.**
+**A manual rule did as well as XGBoost.**
 
 The rule has two conditions and no model behind it. It flags an account that received an unusual
 number of payments and then sent nearly all of that money out again. XGBoost stopped growing after
